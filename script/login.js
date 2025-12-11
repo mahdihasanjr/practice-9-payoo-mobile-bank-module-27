@@ -14,7 +14,7 @@ document.getElementById('btn-login').addEventListener("click",
             
             
             if( convertedPin === 1234){
-               window.location.href="./menu.html"
+               window.location.href="./menu.html";
             }
             else{
                alert('pin thik nai')
