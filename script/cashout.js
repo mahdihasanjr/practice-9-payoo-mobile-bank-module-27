@@ -1,3 +1,5 @@
+
+// cash-out system;
 document.getElementById('btn-cashout').addEventListener('click',
     function(event){
         event.preventDefault()
@@ -36,3 +38,11 @@ document.getElementById('btn-cashout').addEventListener('click',
         }
         
     })
+
+
+// log-out system;
+document.getElementById('log-out-btn').addEventListener('click',
+    function(){
+        window.location.href="./index.html"
+    }
+)
