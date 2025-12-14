@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu page</title>
+    <!-- daisy ui cdn -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+   
+</head>
+<body class="bg-slate-800">
+
+    <main class="max-w-md min-h-screen mx-auto bg-gray-200">
+
+        <!-- header  -->
+        
+            <!-- navbar -->
+            <nav class="flex justify-between items-center p-6 shadow-lg bg-gray-50">
+                <!-- img and text box -->
+               <div class="flex justify-between items-center">
+                <!-- img -->
+                 <figure>
+                    <img class="w-14 mr-2" src="./assets/Group.png" alt="">
+                </figure>
+
+                <!-- text -->
+                 <div>
+                    <h1 class="text-lg font-bold text-[rgba(8,8,8,0.9)]">$ <span id="current-amount">4500</span></h1>
+                    <p class="text-[rgba(8,8,8,0.5)] text-sm">Available Balance</p>
+                 </div>
+               </div>
+
+               <!-- btn -->
+                <button id="log-out-btn" class="btn shadow-md">Log out</button>
+
+            </nav>
+            
+
+            <!-- hero area -->
+             <section class="mt-10 p-6 bg-gray-50">
+                <h1 class="text-2xl font-bold text-[#080808] mb-3">welcome to payooo</h1>
+                <p class="text-[rgba(8,8,8,0.5)] font-medium">
+                    Enjoy easy and convenient financial services with us. Cashout charge is low and 
+                </p>
+
+                <!-- card box-->
+                 <div class="grid grid-cols-3 gap-4 mt-6 cursor-pointer">
+
+                    <!-- card 1 -->
+                     <div id="add-money" class="space-y-2 w-full py-4 border-2 rounded-xl border-[rgba(8,8,8,0.1)] ">
+                        <img class="mx-auto" src="./assets/wallet1.png" alt="">
+                        <p class="text-sm text-[rgba(8,8,8,0.7)]  text-center">
+                            Add Money
+                        </p>
+                     </div>
+                    <!-- card 2 -->
+                     <div id="cashout" class="space-y-2 w-full py-4 border-2 rounded-xl border-[rgba(8,8,8,0.1)] ">
+                        <img class="mx-auto" src="./assets/send1.png" alt="">
+                        <p class="text-sm text-[rgba(8,8,8,0.7)] text-center ">
+                            Cashout
+                        </p>
+                     </div>
+                    <!-- card 3 -->
+                     <div class="space-y-2 w-full py-4 border-2 rounded-xl border-[rgba(8,8,8,0.1)] ">
+                        <img class="mx-auto" src="./assets/money1.png" alt="">
+                        <p class="text-sm text-[rgba(8,8,8,0.7)] text-center ">
+                            Transfer Money
+                        </p>
+                     </div>
+                    <!-- card 4 -->
+                     <div class="space-y-2 w-full py-4 border-2 rounded-xl border-[rgba(8,8,8,0.1)] ">
+                        <img class="mx-auto" src="./assets/bonus1.png" alt="">
+                        <p class="text-sm text-[rgba(8,8,8,0.7)] text-center ">
+                           Get Bonus
+                        </p>
+                     </div>
+                    <!-- card 5 -->
+                     <div class="space-y-2 w-full py-4 border-2 rounded-xl border-[rgba(8,8,8,0.1)] ">
+                        <img class="mx-auto" src="./assets/purse1.png" alt="">
+                        <p class="text-sm text-[rgba(8,8,8,0.7)] text-center ">
+                            Pay Bill
+                        </p>
+                     </div>
+                    <!-- card 6 -->
+                     <div id="transaction" class="space-y-2 w-full py-4 border-2 rounded-xl border-[rgba(8,8,8,0.1)] ">
+                        <img class="mx-auto" src="./assets/transaction1.png" alt="">
+                        <p class="text-sm text-[rgba(8,8,8,0.7)] text-center ">
+                            Transaction
+                        </p>
+                     </div>
+                 </div>
+             </section>
+
+             <!-- add money section -->
+              <section id="add-money-section"  class=" mt-5 p-6  rounded-lg">
+                <h3 class="text-2xl font-bold text-[#080808] mb-3">
+                    Add Money
+                </h3>
+               
+                
+                <div class="card bg-gray-50 w-full max-w-sm shrink-0 mx-auto">
+                  <div class="card-body">
+                    <fieldset class="fieldset">
+
+                        <legend class="fieldset-legend text-base font-medium text-[rgba(8,8,8,0.7)]">Select A Bank</legend>
+                        <select id="selected-bank" class="select bg-[#ebeef3] rounded-full border-none">
+                          <option disabled selected>Select Bank</option>
+                          <option value="bKash">bKash</option>
+                          <option value="Nagad">Nagad</option>
+                          <option value="DBBL">DBBL</option>
+                        </select>
+                      <label class="label text-base font-medium text-[rgba(8,8,8,0.7)]">Bank Account account-number</label>
+                      <input id="account-number" value="01400596304" type="number" class="input bg-[#ebeef3] rounded-full border-none" placeholder="Enter 11 digit account number" />
+
+                      <label class="label text-base font-medium text-[rgba(8,8,8,0.7)]"> Amount to Add</label>
+                      <input id="amount" type="number" class="input bg-[#ebeef3] rounded-full border-none" placeholder="Add Amount to withdraw" />
+
+                      <label class="label text-base font-medium text-[rgba(8,8,8,0.7)]">PIN</label>
+                      <input id="pin" value="1234" type="text" class="input bg-[#ebeef3] rounded-full border-none" placeholder="Enter 4 digit pin number" />
+                      <div><a class="link link-hover">Forgot password?</a></div>
+
+                      <button  id="btn-add-money" class="btn bg-blue-500 text-white mt-4 rounded-full">Add Money</button>
+                    </fieldset>
+                  </div>
+                </div>
+              </section>
+
+              <!-- cash out section -->
+               <section id="cashout-section" class=" mt-5 p-6  rounded-lg">
+                <h3 class="text-2xl text-center font-semibold text-blue-500 mb-3">
+                   Cash-out
+                </h3>
+               
+                <!-- input field box -->
+                <div class="card bg-gray-50 w-full max-w-sm shrink-0 mx-auto">
+                  <div class="card-body ">
+                    <fieldset class="fieldset">
+                      <label class="label text-base font-medium text-[rgba(8,8,8,0.7)]">Agent-number</label>
+                      <input id="agent-number" type="number" class="input bg-[#ebeef3] rounded-full border-none" placeholder="Enter 11 digit number" />
+
+                      <label class="label text-base font-medium text-[rgba(8,8,8,0.7)]"> Amount</label>
+                      <input id="cashout-amount" type="number" class="input bg-[#ebeef3] rounded-full border-none" placeholder="Add Amount to withdraw" />
+
+                      <label class="label text-base font-medium text-[rgba(8,8,8,0.7)]">PIN</label>
+                      <input id="cashout-pin"  type="text" class="input bg-[#ebeef3] rounded-full border-none" placeholder="Enter 4 digit pin number" />
+                      <div><a class="link link-hover">Forgot password?</a></div>
+
+                      <button  id="btn-cashout" class="btn bg-blue-500 text-white mt-4 rounded-full">Cash Out</button>
+                    </fieldset>
+                  </div>
+                </div>
+              </section>
+
+              <!-- transaction history section -->
+               <section id="transaction-section" class="mt-5 p-6 ">
+
+                <!-- head line -->
+                <h3 class="text-2xl font-semibold text-red-600 mb-3 text-center">Transaction History</h3>
+
+                <!--transaction history box -->
+                 <div id="transaction-box" class="bg-gray-50 shadow-lg rounded-lg px-5 py-4">
+                  
+                  
+
+                 </div>
+               </section>
+        
+    </main>
+
+    <!-- <script src="./script/addMoney.js"></script> -->
+    <script src="./utilities/utilities.js"></script>
+    <script src="./admoney.js"></script>
+    <script src="./toggle.js"></script>
+    <script src="./cashout.js"></script>
+    <script src="./transaction.js"></script>
+</body>
+</html>
